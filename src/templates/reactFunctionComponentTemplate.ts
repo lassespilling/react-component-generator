@@ -13,12 +13,7 @@ import './${componentName}.${stylesLanguage}';
 const ${componentName} = () => {
   return (
     <>
-      <div
-        className="${componentName.replace(
-          /[A-Z]/g,
-          (match, offset) => (offset > 0 ? '-' : '') + match.toLowerCase()
-        )}"
-      >
+      <div className={\`${componentName.replace(/[A-Z]/g,(match, offset) => (offset > 0 ? '-' : '') + match.toLowerCase())}\`}>
         ${componentName}
       </div>
     </>
