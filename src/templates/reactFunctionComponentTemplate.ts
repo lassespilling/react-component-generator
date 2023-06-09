@@ -1,4 +1,4 @@
-import {StyleLanguage} from '../types';
+import { StyleLanguage } from '../types';
 
 export function reactFunctionComponentTemplate(
   componentName: string,
@@ -7,15 +7,23 @@ export function reactFunctionComponentTemplate(
 ) {
   return `
 ${importReact ? `import React from 'react';` : ''}
+// Styles
+import './${componentName}.${stylesLanguage}';
 
-import styles from './${componentName}.${stylesLanguage}';
-
-export interface ${componentName}Props {
-  prop?: string;
+const ${componentName} = () => {
+  return (
+    <>
+      <div
+        className="${componentName.replace(
+          /[A-Z]/g,
+          (match, offset) => (offset > 0 ? '-' : '') + match.toLowerCase()
+        )}"
+      >
+        ${componentName}
+      </div>
+    </>
+  )
 }
-
-export function ${componentName}({prop = 'default value'}: ${componentName}Props) {
-  return <div className={styles.${componentName}}>${componentName} {prop}</div>;
-}
+export default ${componentName};
 `.trimLeft();
 }

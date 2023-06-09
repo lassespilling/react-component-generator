@@ -21,8 +21,7 @@
   "publisher": "AndrewMcGoveran",
   "bugs:url": "https://github.com/andrewmcgov/react-component-generator/issues",
   "activationEvents": [
-    "onCommand:extension.generateComponent",
-    "onCommand:extension.generateStories"
+    "onCommand:extension.generateComponent"
   ],
   "main": "./dist/extension.js",
   "icon": "assets/images/icon.png",
@@ -30,11 +29,7 @@
     "commands": [
       {
         "command": "extension.generateComponent",
-        "title": "Generate React component"
-      },
-      {
-        "command": "extension.generateStories",
-        "title": "Generate Storybook stories file"
+        "title": "New React Functional Component"
       }
     ],
     "menus": {
@@ -42,20 +37,12 @@
         {
           "command": "extension.generateComponent",
           "group": "navigation@5"
-        },
-        {
-          "command": "extension.generateStories",
-          "group": "navigation@6"
         }
       ],
       "explorer/context": [
         {
           "command": "extension.generateComponent",
-          "group": "2_workspace"
-        },
-        {
-          "command": "extension.generateStories",
-          "group": "2_workspace"
+          "group": "navigation@5"
         }
       ]
     },
@@ -64,7 +51,7 @@
       "properties": {
         "reactComponentGenerator.language": {
           "type": "string",
-          "default": "ts",
+          "default": "js",
           "enum": [
             "ts",
             "js"
@@ -73,7 +60,7 @@
         },
         "reactComponentGenerator.stylesLanguage": {
           "type": "string",
-          "default": "scss",
+          "default": "css",
           "enum": [
             "scss",
             "css",
@@ -82,25 +69,15 @@
           ],
           "description": "Specifies what language will be used for styles."
         },
-        "reactComponentGenerator.createStoriesFile": {
-          "type": "boolean",
-          "default": "false",
-          "description": "Specifies if a stories file should be generated with the component."
-        },
         "reactComponentGenerator.useIndexFile": {
           "type": "boolean",
           "default": "true",
           "description": "Specifies if the components folder should have an index file to export all of its components."
         },
-        "reactComponentGenerator.verboseStoriesComments": {
-          "type": "boolean",
-          "default": "true",
-          "description": "Specifies if the generated stories file should have comments."
-        },
         "reactComponentGenerator.importReact": {
           "type": "boolean",
           "default": "false",
-          "description": "Specifies if React should be imported in generated components and stories."
+          "description": "Specifies if React should be imported in generated components."
         }
       }
     }
