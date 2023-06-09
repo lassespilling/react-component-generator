@@ -1,5 +1,7 @@
 # How to:
 
+![alt text](https://github.com/lassespilling/react-component-generator/blob/main/thumbnail.jpg?raw=true)
+
 0. export NODE_OPTIONS=--openssl-legacy-provider
 1. yarn
 2. yarn publish-update
